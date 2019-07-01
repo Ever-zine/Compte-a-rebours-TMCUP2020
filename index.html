@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--  <LINK REL="SHORTCUT ICON" href="Images/favicon.ico"> -->
+        <title>Compte à rebours TM CUP 2020</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    </head>
+    <body>
+        <script>
+            //Date de la Zrt Trackmainia Cup 2020
+            const dateTMCUP = new Date(2020, 5, 13, 18);
+
+            function afficheTemps() {
+                //Clear des zones de texte (pour que ça ré-écrive par-dessus et pas en-dessous)
+                document.body.innerHTML = "";
+                //Temps restant en millisecondes
+                let dateAjd = new Date(Date.now());
+                let tempsRestant = dateTMCUP - dateAjd;
+                console.log(tempsRestant);
+                //Passage du temps restant (qui est en ms) en jours heures minutes et secondes et écriture
+                var days = Math.floor( tempsRestant/(1000*60*60*24) );
+                document.write("<h1>" + days + "<h1>");
+                console.log(days);
+                var hours = Math.floor( (tempsRestant/(1000*60*60)) % 24 );
+                document.write("<h1>" + hours + "<h1>");
+                console.log(hours);
+                var minutes = Math.floor( (tempsRestant/1000/60) % 60 );
+                document.write("<h1>" + minutes + "<h1>");
+                console.log(minutes);
+                var seconds = Math.floor( (tempsRestant/1000) % 60 );
+                document.write("<h1>" + seconds + "<h1>");
+                console.log(seconds);
+            };
+
+            //Répétition de la fonction toutes les secondes
+            setInterval(afficheTemps, 1000);
+        </script>
+    </body>
+</html>
