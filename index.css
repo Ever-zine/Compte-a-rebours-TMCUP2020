@@ -64,7 +64,6 @@ body{
   padding-left: 10px;
   padding-right: 10px;
   order: 2;
-  flex-grow: 1;
   border-radius: 5px / 5px;
   /*border: 2px #424242a6 solid;*/
   background-color: #424242a6;
