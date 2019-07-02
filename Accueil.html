@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Accueil.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Compte à rebours TM CUP 2020</title>
+  </head>
+  <body>
+    <script>
+      //Date de la Zrt Trackmainia Cup 2020
+      const dateTMCUP = new Date(2020, 5, 13, 18);
+  
+      function afficheTemps() {
+        //Temps restant en millisecondes
+        let dateAjd = new Date(Date.now());
+        let tempsRestant = dateTMCUP - dateAjd;
+        console.log(tempsRestant);
+        //Passage du temps restant (qui est en ms) en jours heures minutes et secondes into faire en sorte de pouvoir y afficher dans de du le l'html
+        var days = Math.floor( tempsRestant/(1000*60*60*24) );
+        document.getElementById("daysRemaining").innerHTML = days;
+        console.log(days);
+        var hours = Math.floor( (tempsRestant/(1000*60*60)) % 24 );
+        document.getElementById("hoursRemaining").innerHTML = hours;
+        console.log(hours);
+        var minutes = Math.floor( (tempsRestant/1000/60) % 60 );
+        document.getElementById("minutesRemaining").innerHTML = minutes;
+        console.log(minutes);
+        var seconds = Math.floor( (tempsRestant/1000) % 60 );
+        document.getElementById("secondsRemaining").innerHTML = seconds;
+        console.log(seconds);
+      };
+      //Répétition de la fonction toutes les secondes
+      setInterval(afficheTemps, 1000);
+    </script>
+    <a href="AccueilMobile.html">
+      <p>Version Mobile (WIP)</p>
+    </a>
+    <img class="imgBackground" src="Images/logoTrackmainaCupRond.png"/>
+    <div class="compteurDiv">
+      <div class="text">
+        <p class="sousTitre">La Trackmania Cup 2020 c'est dans :</p>
+        <p class="textCompteur">
+          <span id="daysRemaining"></span> jours 
+          <span id="hoursRemaining"></span> heures 
+          <span id="minutesRemaining"></span> minutes 
+          <span id="secondsRemaining"></span> secondes 
+        </p>
+        <p class="dateTMCUP">Le samedi 13 juin 2020 à l'AccorHotel Arena (Bercy Bichel) !</p>
+      </div>
+    </div>
+    <div class="links">
+      <div class="linkOne">
+        <a href="https://twitter.com/trackmaniacupfr">
+          <img class="twitter" src="Images/twitter.png" alt="Twitter Trackmainia Cup" title="Twitter Trackmania Cup"/>
+        </a>
+      </div>
+      <div class="linkTwo">
+        <a href="http://htdplaces.fr">
+          <img class="billeterie" src="Images/shop.png" alt="Billeterie" title="Billeterie"/>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
