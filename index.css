@@ -15,7 +15,7 @@ body{
   z-index: 5;
 }
 
-.imgBackground {
+/*.imgBackground {
   position: fixed;
   width: 500px;
   height: 500px;
@@ -24,7 +24,7 @@ body{
   margin-top: -100px;
   margin-left: -250px;
   z-index: 0;
-}
+}*/
 
 .linkOne{
   margin-left: 14px;
