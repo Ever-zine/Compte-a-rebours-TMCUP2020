@@ -10,7 +10,10 @@
     <script>
       //Date de la Zrt Trackmainia Cup 2020
       const dateTMCUP = new Date(2020, 5, 13, 18);
-  
+
+      //Répétition de la fonction toutes les secondes
+      setInterval(afficheTemps, 1000);
+
       function afficheTemps() {
         //Temps restant en millisecondes
         let dateAjd = new Date(Date.now());
@@ -30,8 +33,6 @@
         document.getElementById("secondsRemaining").innerHTML = seconds;
         console.log(seconds);
       };
-      //Répétition de la fonction toutes les secondes
-      setInterval(afficheTemps, 1000);
     </script>
     <a href="indexMobile.html">
       <p>Version Mobile (WIP)</p>
